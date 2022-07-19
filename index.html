@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/0c77a9f97f.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Search Engine-Git</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ 
+  </head>
+  <body>
+    <div class="container main">
+      <div class="row"> 
+      <div class="img col-md-8 offset-md-2 col-sm-12">
+        <div class="img-overlay">
+          
+          <div class="row"> 
+                       <div class="col-md-6 col-sm-12 col-12 order-md-first order-last">
+          
+            <h1></h1>
+            <span id="currentDate">Saturday 12:05</span>
+          </div>
+                   <div class="col-md-6 col-sm-12 col-12 order-firs">
+            <form id="search-form"> 
+
+<div class="input-group">
+  <input type="text" class="form-control" id="form-input" placeholder="Type a city..." aria-label="Recipient's username with two button addons">
+  <button class="btn btn-outline-secondary btn-search" type="submit">Search</button>
+  <button class="btn btn-outline-secondary btn-location"  type="button"><i class="fa-solid fa-location-dot"></i></button>
+</div>
+</form>
+            
+                  
+          </div>
+          
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="temperature">
+                <img class="current-weather-icon" src="img/5.svg" alt="" />
+                <span class=temp id="temp"></span>
+                 <span class="unit">
+                   
+                   <a href="#" id="celsius-link">°C</a>   |
+                   <a href="#"  id="fahrenheit-link">°F</a>
+                  </span>
+               
+                 <span class="unit"></span>
+              </div>
+             
+            </div>
+
+            <div class="col-6">
+              <div class="list">
+                <ul>
+                  <li id="description">Scattered clouds</li>
+                  <li>Humidity: 52%</li>
+                  <li>Wind: 3 km/h</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <div class="weather-forecast">Sun</div>
+                <img
+                  class="forecast-icon"
+                  src="img/PartlyCloudy-Bold.svg"
+                  alt=""
+                />
+                <div class="weather-forecast">28 / 27</div>
+              </div>
+
+              <div class="col-2">
+                <div class="weather-forecast">Mon</div>
+                <img
+                  class="forecast-icon"
+                  src="img/PartlyCloudy-Bold.svg"
+                  alt=""
+                />
+                <div class="weather-forecast">25 / 27</div>
+              </div>
+
+              <div class="col-2">
+                <div class="weather-forecast">Tue</div>
+                <img
+                  class="forecast-icon"
+                  src="img/PartlyCloudy-Bold.svg"
+                  alt=""
+                />
+                <div class="weather-forecast">30 / 31</div>
+              </div>
+
+              <div class="col-2">
+                <div class="weather-forecast">Wed</div>
+                <img
+                  class="forecast-icon"
+                  src="img/PartlyCloudy-Bold.svg"
+                  alt=""
+                />
+                <div class="weather-forecast">27 / 28</div>
+              </div>
+              <div class="col-2">
+                <div class="weather-forecast">Thu</div>
+                <img
+                  class="forecast-icon"
+                  src="img/PartlyCloudy-Bold.svg"
+                  alt=""
+                />
+                <div class="weather-forecast">28 / 29</div>
+              </div>
+              <div class="col-2">
+                <div class="weather-forecast">Fri</div>
+                <img
+                  class="forecast-icon"
+                  src="img/PartlyCloudy-Bold.svg"
+                  alt=""
+                />
+                <div class="weather-forecast">27 / 29</div>
+              </div>
+            </div>
+          </div>
+        </div>     
+      </div>
+    </div>
+    </div>
+  </body>
+  <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+ 
+    ></script>
+     <script      
+      src="src/index.js"
+    ></script>
+</html>
+
