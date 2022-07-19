@@ -95,3 +95,15 @@ button:hover {
   display: block;
   margin: 0 auto;
 }
+
+.link-code {
+  font-size: 13px;
+  color: #30a8de;
+}
+
+.code {
+  margin-left: 180px;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #0c1b33;
+}
