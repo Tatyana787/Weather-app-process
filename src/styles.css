@@ -20,13 +20,19 @@ a {
   margin-top: 20px;
 }
 
+/* .сontainer {
+  max-width: 600px; */
+
 .img {
   background: url(https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80)
     no-repeat center top;
   box-shadow: 0px 3px 19px 0px rgba(0, 0, 0, 0.5);
+  padding-left: 0;
+  padding-right: 0;
 }
 .img-overlay {
   background-color: #ffffff01;
+  -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
   padding: 20px 40px 30px;
 }
