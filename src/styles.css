@@ -10,23 +10,26 @@ ul {
   border-left: 1px solid #0c1b3350;
 }
 
+li::first-letter {
+  font-size: medium;
+}
+
 a {
   text-decoration: none;
   color: #0c1b33;
   font-size: 16px;
 }
 
-.main {
-  margin-top: 20px;
-  max-width: 950px;
+.update {
+  font-size: small;
 }
 
 .img {
   background: url(https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80)
     no-repeat center top;
   box-shadow: 0px 3px 19px 0px rgba(0, 0, 0, 0.5);
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .img-overlay {
   background-color: #ffffff01;
@@ -80,6 +83,9 @@ button:hover {
 
 .current-weather-icon {
   height: 95px;
+  width: 95px;
+  /* height: 80%;
+  width: 110%; */
 }
 
 .list {
@@ -101,13 +107,12 @@ button:hover {
 }
 
 .link-code {
-  font-size: 13px;
   color: #30a8de;
+  font-size: 9px;
 }
 
-.code {
-  margin-left: 180px;
-  padding-top: 10px;
-  font-size: 13px;
-  color: #0c1b33;
+.weather-app-wrapper {
+  padding-top: 9px;
+  font-size: 9px;
+  color: #6c757d;
 }
