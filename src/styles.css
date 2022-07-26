@@ -19,6 +19,9 @@ a {
   color: #0c1b33;
   font-size: 16px;
 }
+.container {
+  max-width: 1000px;
+}
 
 .update {
   font-size: small;
@@ -82,8 +85,10 @@ button:hover {
 }
 
 .current-weather-icon {
-  height: 95px;
-  width: 95px;
+  height: 60px;
+  width: 60px;
+
+  margin: 0 auto;
   /* height: 80%;
   width: 110%; */
 }
@@ -115,4 +120,13 @@ button:hover {
   padding-top: 9px;
   font-size: 9px;
   color: #6c757d;
+  max-width: 900px;
 }
+
+.weather-forecast-temp-min {
+  color: #fff9;
+}
+
+/* .weather-forecast-temp-max {
+  font-weight: bold;
+} */

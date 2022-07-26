@@ -19,6 +19,13 @@ function formatData(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "8c27e32a44363e7c302056624eb9fac6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeatherCondition(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
@@ -35,18 +42,20 @@ function displayWeatherCondition(response) {
   let dataElement = document.querySelector("#currentDate");
   dataElement.innerHTML = formatData(response.data.dt * 1000);
   // document.querySelector("#uv").innerHTML = response.data;
+  // displayForecast();
+  getForecast(response.data.coord);
 }
 
-function changeIcon(response) {
+function changeIcon() {
   let icon = document.querySelector("img.current-weather-icon");
-  let iconEl = response.data.weather[0].icon;
-  // let iconEl = `50d`;
+  // let iconEl = response.data.weather[0].icon;
+  let iconEl = `01n`;
   // icon.setAttribute("src", iconDictionary[iconEl]);
-  // icon.setAttribute("src", `img/${iconEl}.png`);
-  icon.setAttribute(
-    "src",
-    ` http://openweathermap.org/img/wn/${iconEl}@2x.png`
-  );
+  icon.setAttribute("src", `img/${iconEl}.png`);
+  // icon.setAttribute(
+  //   "src",
+  //   ` http://openweathermap.org/img/wn/${iconEl}@2x.png`
+  // );
 
   console.log(iconEl);
 }
@@ -126,4 +135,50 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
+// <!--------------------------forecat-------------------------------!>
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  // console.log(response.data.daily[0].temp.max);
+  let forecast = response.data.daily;
+  // let tempMax = Math.round(response.data.daily[0].temp.max);
+  // let tempMin = Math.round(response.data.daily[0].temp.min);
+  // console.log(tempMin);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHtml = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHtml =
+        forecastHtml +
+        ` 
+<div class="col-2">
+<div class="weather-forecast" >${formatDay(forecastDay.dt)}</div>
+
+<img
+class="forecast-icon"
+src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+alt=""
+ />
+<div class="weather-forecast">
+<span class=weather-forecast-temp-max>${Math.round(
+          forecastDay.temp.max
+        )}º</span>
+<span class=weather-forecast-temp-min>/ ${Math.round(
+          forecastDay.temp.min
+        )}º</span>
+</div>
+</div>`;
+    }
+  });
+
+  forecastHtml = forecastHtml + `</div>`;
+  forecastElement.innerHTML = forecastHtml;
+}
 //==============
