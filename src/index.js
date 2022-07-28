@@ -115,26 +115,6 @@ searchC.addEventListener("submit", getTemp);
 let form = document.querySelector("button.btn-location");
 form.addEventListener("click", getGeo);
 
-function convertToCelsius(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = 22;
-}
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  let temperature = tempElement.innerHTML;
-  temperature = Number(temperature);
-  tempElement.innerHTML = Math.round(temperature * 1.8 + 32);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
-
 // <!--------------------------forecat-------------------------------!>
 
 function formatDay(timestamp) {
@@ -181,4 +161,3 @@ alt=""
   forecastHtml = forecastHtml + `</div>`;
   forecastElement.innerHTML = forecastHtml;
 }
-//==============
